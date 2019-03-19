@@ -1,0 +1,120 @@
+/* .stickertable table{
+    margin-left: 3cm;
+} */
+.stickertable table, th, td{
+    table-layout: fixed;
+    /* border: 1px solid black; */
+    border-collapse: collapse;
+}
+
+.stickertable tr{
+    height: 3.7cm;
+    min-height: 3.7cm;
+    max-height: 3.7cm;
+}
+
+.stickertable td{
+    white-space: nowrap;
+    overflow: hidden;
+    width: 5.4cm;
+    min-width: 5.4cm;
+    max-width: 5.4cm;
+}
+
+.sticker table {
+    table-layout: fixed;
+    width: unset;
+    min-width: unset;
+    max-width: unset;
+}
+.sticker td {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    width: unset;
+    min-width: unset;
+    max-width: unset;
+}
+
+.sticker tr {
+    height: unset;
+    min-height: unset;
+    max-height: unset;
+}
+
+.sticker td[name="firstname"],
+.sticker td[name="sex"],
+.sticker td[name="birthday"],
+.sticker td[name="zipcity"],
+.sticker td[name="insurance"],
+.sticker td[name="street"],
+.sticker td[name="telephonebox"]{
+    font-size: 0.3cm
+}
+
+.sticker td[name="insurancenumbox"],
+.sticker td[name="insurancetypebox"],
+.sticker td[name="admissiondate"],
+.sticker td[name="poe"],
+.sticker td[name="casenobox"],
+.sticker td[name="foe"]{
+    font-size: 0.2cm;
+}
+
+.sticker td[name="name"] {
+    font-variant: small-caps;
+    font-size: 0.5cm;
+    font-weight: bold;
+}
+
+    
+
+.sticker td[name="firstname"]{
+    width: 2.5cm;
+    font-weight: bold;
+}
+
+.sticker td[name="sex"]{
+    width: 0.5cm;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.3cm
+}
+
+.sticker td[name="birthday"]{
+    width: 2.5cm;
+    font-style: italic;
+
+}
+
+.sticker td[name="street"]{
+    width: 4.5cm;
+
+}
+
+.sticker td[name="telephonebox"]{
+    width: 4.5cm;
+}
+
+.sticker td[name="casetype"]{
+    width: 1cm;
+    font-weight: bold;
+    text-align: center;
+    font-size: 0.5cm
+}
+
+.sticker td[name="admissiondate"]{
+    font-size: 0.25cm;
+}
+.sticker td[name="poe"]{
+    font-weight: bold;
+    font-size: 0.3cm;
+}
+.sticker td[name="casenobox"]{
+    font-weight: bold;
+    font-size: 0.3cm;
+}
+.sticker td[name="foe"]{
+    font-weight: bold;
+    font-size: 0.3cm;
+}

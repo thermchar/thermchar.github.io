@@ -1,0 +1,43 @@
+@media print{
+    @page {
+        size: A4 landscape;
+        margin: 0;
+    }
+    @page: right {
+        display : none;
+    }
+    body {
+        height:100%; 
+        margin: 0 !important; 
+        padding: 0.9cm !important;
+        overflow: hidden;
+        /* margin-left: 1.0cm;
+        margin-right: 1.0cm;
+        margin-top: 1.0cm;
+        margin-bottom: 1.0cm; */
+    }
+}
+
+@media screen {
+
+    .printable {
+    display: none;
+    }
+
+    .unprintable {
+    display: block;
+    }
+
+}
+
+@media print {
+
+    .printable {
+    display: block;
+    }
+
+    .unprintable {
+    display: none;
+    }
+
+}

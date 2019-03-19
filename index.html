@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <meta name="author" content="Tobias Hermann">
+  <meta name="description" content="Notfallklebchen Charite">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- <link href="css/normalize.css" rel="stylesheet"> -->
+  <link href="css/form.css" rel="stylesheet">
+  <link href="css/print.css" rel="stylesheet">
+  <link href="css/sticker.css" rel="stylesheet">
+</head>
+
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Bitter' rel='stylesheet' type='text/css'>
+  <script src="js/script.js"></script>
+  <!-- Form -->
+  <div class="nofakle-form unprintable">
+    <h1>🏥 Notfallklebchen<span>Formular im Browser ausfüllen, dann drucken (Strg+P).</span><span>Es werden keine Daten gesendet oder gespeichert.</span></h1>
+    <form id="mainform">
+        <div class="section"><span>1</span>Fall</div>
+        <div class="inner-wrap">
+            <label>Fallnummer<input type="number" id="caseno" /></label>
+            <label>Fallart<select id="casetype"></select> </label>
+            <label>Pflegerische OE<select id="poe"></select> </label>
+            <label>Fachliche OE<select id="foe"></select> </label>
+            <label>Datum<input type="date" id="casedate" /></label>
+            <label>Uhrzeit<input type="time" id="casetime" /></label>
+        </div>
+    
+        <div class="section"><span>2</span>Patient</div>
+        <div class="inner-wrap">
+            <label>Nachname <input type="text" id="name" /></label>
+            <label>Vorname <input type="text" id="firstname" /></label>
+            <label>Geburtsdatum <input type="date" id="birthday" /></label>
+            <label>Geschlecht<select id="sex">
+                </select> </label>
+            <label>Strasse, Hausnummer <input type="text" id="street" /></label>
+            <label>Postleitzahl<input type="text" id="zip" /></label>
+            <label>Ort<input type="text" id="city" value="Berlin" /></label>
+            <label>Telefon<input type="text" id="telephone" /></label>
+        </div>
+    
+        <div class="section"><span>3</span>Versicherung</div>
+            <div class="inner-wrap">
+            <label>Versicherung 
+                <input type="text" id="insurance" list="insuranceList"/>
+                <datalist id="insuranceList">
+                    <option value="AOK Nordost">AOK Nordost</option>
+                    <option value="Barmer">Barmer</option>
+                    <option value="TKK">TKK</option>
+                    <option value="DAK">DAK</option>
+                    <option value="IKK">IKK</option>
+                    <option value="BKK VBU">BKK VBU</option>
+                    <option value="SBK">SBK</option>
+                    <option value="HKK">HKK</option>
+                    <option value="KKH">KKH</option>
+                </datalist>
+            </label>
+            <label>Versichertennummer <input type="text" id="insurancenum" /></label>
+            <label>Mitgliedsart<select id="insurancetype">
+                    <option value="Mitglied">Mitglied</option>
+                    <option value="Rentner">Rentner</option>
+                    <option value="fam. versichert">fam. versichert</option>
+                </select> </label>
+        </div>
+        <div class="button-section">
+            <input type="button" id="printbutton" value="Drucken"/>
+            <input type="button" id="resetbutton" value="Zurücksetzen"/>
+        </div>
+    </form>
+    </div>
+    <!-- stickers -->
+    <div class="printable">
+        <table class="stickertable">
+            <tr>
+                <td>
+                </td>
+                <td id="stickertemplate">
+                    <table class="sticker">
+                        <tbody>
+                            <tr>
+                                <td colspan="4" name="name">Hermann</td>
+                            </tr>
+                            <tr>
+                                <td name="firstname">Tobias</td>
+                                <td name="sex">M</td>
+                                <td name="birthday" colspan="2">*23.12.1776</td>
+                            </tr>
+                            <tr>
+                                <td name="zipcity">
+                                    <span name="zip"></span>
+                                    <span name="city"></span>
+                                </td>
+                                <td name="insurance" colspan="3">KV: Barmer</td>
+                            </tr>
+                            <tr>
+                                <td name="street" colspan="3">Gabriele-Tergit-Promenade 78b</td>
+                                <td name="casetype" rowspan="2">1A</td>
+                            </tr>
+                            <tr>
+                                <td name="telephonebox" colspan="3">
+                                    ☎<span name=telephone></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td name="insurancenumbox" colspan="2">
+                                    KV-Nr.: 
+                                    <span name="insurancenum"></span>
+                                </td>
+                                <td name="insurancetypebox" colspan="2">
+                                    Vers.-Status: 
+                                    <span name="insurancetype"></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td name="admissiondate" colspan="2">Aufn:
+                                    <span name="casedate">
+                                        17.08.2019
+                                    </span> - 
+                                    <span name="casetime">
+                                        17:10
+                                    </span>
+                                </td>
+                                <td name="poe" colspan="2">MZEN-EH</td>
+                            </tr>
+                            <tr>
+                                <td name="casenobox" colspan="2">
+                                    Fall-Nr.: <span name="caseno"></span>
+                                </td>
+                                <td name="foe" colspan="2">MORTHO</td>
+                            </tr>
+                        </tbody>
+                    </table>                
+                </td>
+                <td class="stickercontainer"></td>
+                <td class="stickercontainer"></td>
+                <td></td>
+            </tr>
+            <tr>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+            </tr>
+            <tr>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+            </tr>
+            <tr>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+            </tr>
+            <tr>
+                    <td class=""></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class="stickercontainer"></td>
+                    <td class=""></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
