@@ -130,6 +130,11 @@ function initForm() {
 
     // clear form
     clearForm()
+
+    // warn user to use chrome/ium
+    if(navigator.userAgent.indexOf("Chrom") == -1){
+        alert("Falscher Browser! Diese Seite funktioniert leider nur in Google Chrome so richtig.")
+    }
 }
 
 function clearForm(){
