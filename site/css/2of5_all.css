@@ -8,9 +8,3 @@
 .i2of5_L { font-family: i2of5_L; font-size:84px }
 .i2of5_XL { font-family: i2of5_XL; font-size:112px }
 .i2of5_XXL { font-family: i2of5_XXL; font-size:140px }
-.barcode{
-    font-family: i2of5; 
-    font-size:1.3cm;
-    padding: 0cm !important;
-    text-align: center;
-}
