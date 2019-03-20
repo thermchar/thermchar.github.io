@@ -136,7 +136,7 @@ function initForm() {
 
     // warn user to use chrome/ium
     if(navigator.userAgent.indexOf("Chrom") == -1){
-        alert("Falscher Browser! Diese Seite funktioniert leider nur in Google Chrome so richtig.")
+        alert("Falscher Browser! Diese Seite funktioniert leider nur in Google Chrome so richtig. Insbesondere werden die Ausdrucke mit diesem Browser nicht zu gebrauchen sein!")
     }
 }
 
