@@ -125,6 +125,8 @@ function clearForm(){
     $("#casedate").val(new Date().toDateInputValue());
     $("#casetime").val(new Date().toTimeInputValue());
     
+    // focus first input
+    $("#caseno").focus()
 }
 
 $(document).ready(initForm);
