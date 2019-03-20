@@ -109,6 +109,9 @@ function initForm() {
     // duplicate sticker templates dom
     var $sticker = $("#stickertemplate").clone();
     $('.stickercontainer').html($sticker);
+    var $stickerbarcode = $("#stickertemplatebarcode").clone();
+    $('.stickercontainerbarcode').html($stickerbarcode);
+
     
     // add options to select dropdowns
     populateDropdowns()

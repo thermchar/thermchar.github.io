@@ -9,7 +9,6 @@
     body {
         height:100%; 
         margin: 0 !important; 
-        padding: 0.9cm !important;
         overflow: hidden;
         /* margin-left: 1.0cm;
         margin-right: 1.0cm;
@@ -40,4 +39,11 @@
     display: none;
     }
 
+    div {
+        height:100%; 
+        margin: 0 !important; 
+        padding: 0.9cm !important;
+        overflow: hidden;
+        page-break-after: always;
+    }
 }
