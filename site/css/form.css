@@ -128,3 +128,10 @@
 	margin-top: 10px;
 	text-align: right;
 }
+
+#footer {
+	color : #ccc;
+	width: 450px;
+	margin: 2px auto 0 auto;
+	text-align: center;
+}
