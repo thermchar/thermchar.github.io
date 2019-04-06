@@ -50,7 +50,7 @@
 .sticker td[name="insurance"],
 .sticker td[name="street"],
 .sticker td[name="telephonebox"]{
-    font-size: 0.3cm
+    font-size: 0.25cm
 }
 
 .sticker td[name="insurancenumbox"],
@@ -59,7 +59,7 @@
 .sticker td[name="poe"],
 .sticker td[name="casenobox"],
 .sticker td[name="foe"]{
-    font-size: 0.2cm;
+    font-size: 0.15cm;
 }
 
 .sticker td[name="name"] {
@@ -85,7 +85,6 @@
 .sticker td[name="birthday"]{
     width: 2.5cm;
     font-style: italic;
-
 }
 
 .sticker td[name="street"]{
@@ -100,8 +99,8 @@
 .sticker td[name="casetype"]{
     width: 1cm;
     font-weight: bold;
-    text-align: center;
-    font-size: 0.5cm
+    text-align: left;
+    font-size: 0.4cm
 }
 
 .sticker td[name="admissiondate"]{
@@ -121,8 +120,8 @@
 }
 
 .barcode{
-    font-family: i2of5_S; 
-    font-size: 1cm;
+    font-family: i2of5; 
+    font-size: 0.8cm;
     padding: 0cm !important;
     text-align: center;
 }
