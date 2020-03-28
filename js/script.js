@@ -74,6 +74,19 @@ function populateDropdowns(){
     });
 }
 
+function checksum2of5(caseno){
+    factor = 3;
+    sum = 0;
+    while(caseno > 0){
+        digit = caseno % 10;
+        sum += factor * digit;
+
+        caseno = parseInt(caseno / 10);
+        factor = (factor==1)? 3 : 1;
+    }
+    return (10 - sum % 10);
+}
+
 function updateStickers(){
     // do the ones where the fields map one on one
     fields = ['caseno', 'casetype', 'poe', 'foe', 'name', 'firstname', 'casetime', 'street', 'zip', 'city', 'telephone', 'insurance', 'insurancenum', 'insurancetype']
@@ -82,7 +95,14 @@ function updateStickers(){
     });
 
     // do corner cases by hand
-    
+
+    // checksum calculated by default 2of5 interleaved algorithm doens't 
+    // seem to match the one printed on stickers
+    caseno = parseInt($('#caseno').val());
+    checksum = checksum2of5(caseno)
+    console.log(""+caseno+checksum);
+    $('[name="casenobc"]').html(""+caseno+checksum)
+
     $('[name="birthday"]').html(formatDate($('#birthday').val()))
     $('[name="casedate"]').html(formatDate($('#casedate').val()))
 
@@ -103,6 +123,7 @@ function updateStickers(){
     // $('td[name="name"]').html($('#name').val())
     // $('td[name="name"]').html($('#name').val())
 }
+
 
 
 function initForm() {
