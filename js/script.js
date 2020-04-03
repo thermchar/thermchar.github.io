@@ -89,19 +89,25 @@ function checksum2of5(caseno){
 
 function updateStickers(){
     // do the ones where the fields map one on one
-    fields = ['caseno', 'casetype', 'poe', 'foe', 'name', 'firstname', 'casetime', 'street', 'zip', 'city', 'telephone', 'insurance', 'insurancenum', 'insurancetype']
+    fields = ['casetype', 'poe', 'foe', 'name', 'firstname', 'casetime', 'street', 'zip', 'city', 'telephone', 'insurance', 'insurancenum', 'insurancetype']
     $.each(fields, function(key, value){
         $('[name="'+value+'"]').html($('#'+value).val())
     });
 
     // do corner cases by hand
 
+    // remove leading zeros from caseno string
+    casenostr = $('#caseno').val().replace(/^0+/, '');
+    // cut first 9 chars
+    casenostr = casenostr.substring(0, 9);
+
     // checksum calculated by default 2of5 interleaved algorithm doens't 
     // seem to match the one printed on stickers
-    caseno = parseInt($('#caseno').val());
+    caseno = parseInt(casenostr);
     checksum = checksum2of5(caseno)
-    console.log(""+caseno+checksum);
     $('[name="casenobc"]').html(""+caseno+checksum)
+    
+    $('[name="caseno"]').html(casenostr);
 
     $('[name="birthday"]').html(formatDate($('#birthday').val()))
     $('[name="casedate"]').html(formatDate($('#casedate').val()))
