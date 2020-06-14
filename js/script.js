@@ -144,8 +144,7 @@ function updateQR() {
     };
 
 
-    qrSAP = "\b" +
-            formatDate($('#birthday').val()) + "\t\t\t"+
+    qrSAP = "\t\t\t" +
             $('#sex').val() + "\t\t\t\t\t\t\t"+
             $('#street').val() + "\t\t\tde\t"+
             $('#zip').val() + "\t"+
@@ -153,10 +152,10 @@ function updateQR() {
             $('#telephone').val() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+
             $('#name').val() + "\t"+
             title + "\t"+
-            $('#firstname').val() + "\t\t\t\t\t";
+            $('#firstname').val() + "\t\t\t\t" +
+            formatDate($('#birthday').val()) + "\t";
 
 
-    a = "Müller\tHans\tStraße\t88\t\t1488\tBerlin\t\t\t12345678\t\t\t23.12.1470\t\t\t\t\t\t\t\t\t\t\b\b\b\b\b\b"
     qrEcare = $('#name').val() + "\t"+
             $('#firstname').val() + "\t" +
             $('#street').val() + "\t\t\t" +
