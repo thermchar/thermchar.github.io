@@ -46,4 +46,12 @@
         overflow: hidden;
         page-break-after: always;
     }
+
+    .qrcode {
+        margin : 1cm;
+    }
+
+    h2 {
+        margin: 1cm;
+    }
 }

@@ -104,13 +104,13 @@ function updateStickers(){
     // checksum calculated by default 2of5 interleaved algorithm doens't 
     // seem to match the one printed on stickers
     caseno = parseInt(casenostr);
-    checksum = checksum2of5(caseno)
-    $('[name="casenobc"]').html(""+caseno+checksum)
+    checksum = checksum2of5(caseno);
+    $('[name="casenobc"]').html(""+caseno+checksum);
     
     $('[name="caseno"]').html(casenostr);
 
-    $('[name="birthday"]').html(formatDate($('#birthday').val()))
-    $('[name="casedate"]').html(formatDate($('#casedate').val()))
+    $('[name="birthday"]').html(formatDate($('#birthday').val()));
+    $('[name="casedate"]').html(formatDate($('#casedate').val()));
 
     var sex;
     switch($('#sex').val()){
@@ -123,14 +123,70 @@ function updateStickers(){
         case 'unbekannt':
             sex = 'U'
             break;
-    }
-    $('td[name="sex"]').html(sex)
-    // $('td[name="name"]').html($('#name').val())
-    // $('td[name="name"]').html($('#name').val())
-    // $('td[name="name"]').html($('#name').val())
+    };
+    $('td[name="sex"]').html(sex);
 }
 
+function updateQR() {
+    a = "\b14.07.1230\t\t\tu\t\t\t\t\t\t\tMusterstr.\t22\t\tde\t99999\tBerlin\t\t\t1234567890\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tMüstermünö\tHerr\tMustlörß\t\t\t\t\t";
 
+    var title;
+    switch($('#sex').val()){
+        case 'männlich':
+            title = 'Herr'
+            break;
+        case 'weiblich':
+            title = 'Frau'
+            break;
+        case 'unbekannt':
+            title = 'Herr'
+            break;
+    };
+
+
+    qrSAP = "\b" +
+            formatDate($('#birthday').val()) + "\t\t\t"+
+            $('#sex').val() + "\t\t\t\t\t\t\t"+
+            $('#street').val() + "\t\t\tde\t"+
+            $('#zip').val() + "\t"+
+            $('#city').val() + "\t\t\t"+
+            $('#telephone').val() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+
+            $('#name').val() + "\t"+
+            title + "\t"+
+            $('#firstname').val() + "\t\t\t\t\t";
+
+
+    a = "Müller\tHans\tStraße\t88\t\t1488\tBerlin\t\t\t12345678\t\t\t23.12.1470\t\t\t\t\t\t\t\t\t\t\b\b\b\b\b\b"
+    qrEcare = $('#name').val() + "\t"+
+            $('#firstname').val() + "\t" +
+            $('#street').val() + "\t\t\t" +
+            $('#zip').val() + "\t" +
+            $('#city').val() + "\t\t\t" +
+            $('#telephone').val() + "\t\t\t" +
+            formatDate($('#birthday').val()) + "\t\t\t\t\t\t\t\t\t\t" +
+            "\b".repeat($('#name').val().length);
+    
+    $('#qrsap').html("");
+    $('#qrsap').qrcode({
+        text : qrSAP,
+        render	: "canvas",
+        background : "#ffffff",
+        foreground : "#000000",
+        width : 200,
+        height: 200
+    });            
+
+    $('#qrecare').html("");
+    $('#qrecare').qrcode({
+        text : qrEcare,
+        render	: "canvas",
+        background : "#ffffff",
+        foreground : "#000000",
+        width : 200,
+        height: 200
+    });            
+
+}
 
 function initForm() {
     // duplicate sticker templates dom
@@ -144,11 +200,14 @@ function initForm() {
     populateDropdowns()
 
     // register cb if form content changed
-    $(".nofakle-form").change(updateStickers)
+    $(".nofakle-form").change(function(){
+        updateStickers();
+        updateQR();
+    });
 
     // register cb for print button
     $("#printbutton").click(function(){
-        window.print()
+        window.print();
     });
 
     // register cb for reset button
