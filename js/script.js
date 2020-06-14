@@ -28,11 +28,11 @@ Date.prototype.toTimeInputValue = (function() {
 
 function formatDate(date){
     var formattedDate = new Date(date);
-    var d = formattedDate.getDate();
-    var m =  formattedDate.getMonth() + 1;
-    var y = formattedDate.getFullYear();
+    var d = String(formattedDate.getDate());
+    var m = String(formattedDate.getMonth() + 1);
+    var y = String(formattedDate.getFullYear());
     
-    return d + "." + m + "." + y
+    return d.padStart(2, '0') + "." + m.padStart(2, '0') + "." + y.padStart(4, '0')
 }
 
 function populateDropdowns(){
