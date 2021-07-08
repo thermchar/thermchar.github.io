@@ -266,10 +266,94 @@
     <div class="barcode unprintable" style="color: #fff">
             :<span>3810102353</span>;
         </div>
-    <h2 class="printable">Ins Ecare scannen:</h2>
-    <p class="printable qrcode" id="qrecare"> </p>
-    <h2 class="printable">Ins SAP scannen:</h2>
-    <p class="printable qrcode" id="qrsap"> </p>
+    <table class="printable">
+        <tr>
+            <td>
+                <h2 class="printable">Ins Ecare scannen:</h2>
+                <p class="printable qrcode" id="qrecare"> </p>
+            </td>
+            <td rowspan="2">
+                <table>
+                    <tr>
+                        <td><b>Nachname</b></td>
+                        <td name="name"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Vorname</b></td>
+                        <td name="firstname"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Geburtsdatum</b></td>
+                        <td name="birthday"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Geschlecht</b></td>
+                        <td name="sex"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Straße</b></td>
+                        <td name="street"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Postleitzahl</b></td>
+                        <td name="zip"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Stadt</b></td>
+                        <td name="city"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Aufnahmezeitpunkt</b></td>
+                        <td>
+                            <span name="casedate"></span>
+                            --
+                            <span name="casetime"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>OEs</b></td>
+                        <td>
+                            <span name="poe"></span>
+                            --
+                            <span name="foe"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><b>Besuchsart</b></td>
+                        <td name="casetype"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Versicherung</b></td>
+                        <td name="insurance"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Versicherungsnummer</b></td>
+                        <td name="insurancenum"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Versicherungsart</b></td>
+                        <td name="insurancetype"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Fallnummer</b></td>
+                        <td name="caseno"></td>
+                    </tr>
+                    <tr>
+                        <td><b>Barcode</b></td>
+                        <td class="barcode" name="casenobc"></td>
+                    </tr>
+                </table>
+            </td>
+        <tr>
+                <td>
+                    <h2 class="printable">Ins SAP scannen:</h2>
+                    <p class="printable qrcode" id="qrsap"> </p>
+                </td>
+                <td>
+
+                </td>
+            </tr>
+    </table>
     <div id="footer" class="unprintable">&copy; Copyright 2019 Tobias Hermann</div>
 </body>
 </html>
