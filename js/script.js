@@ -144,16 +144,15 @@ function updateQR() {
     };
 
 
-    qrSAP = "\t\t\t" +
+    qrSAP = $('#name').val() + "\t"+
+            title + "\t"+
+            $('#firstname').val() + "\t\t\t\t" +
+            formatDate($('#birthday').val()) + "\t\t\t";
             $('#sex').val() + "\t\t\t\t\t\t\t"+
             $('#street').val() + "\t\t\tde\t"+
             $('#zip').val() + "\t"+
             $('#city').val() + "\t\t\t"+
-            $('#telephone').val() + "\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t"+
-            $('#name').val() + "\t"+
-            title + "\t"+
-            $('#firstname').val() + "\t\t\t\t" +
-            formatDate($('#birthday').val()) + "\t";
+            $('#telephone').val();
 
 
     qrEcare = $('#name').val() + "\t"+
