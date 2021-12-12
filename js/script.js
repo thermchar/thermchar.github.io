@@ -147,7 +147,7 @@ function updateQR() {
     qrSAP = $('#name').val() + "\t"+
             title + "\t"+
             $('#firstname').val() + "\t\t\t\t" +
-            formatDate($('#birthday').val()) + "\t\t\t";
+            formatDate($('#birthday').val()) + "\t\t\t" +
             $('#sex').val() + "\t\t\t\t\t\t\t"+
             $('#street').val() + "\t\t\tde\t"+
             $('#zip').val() + "\t"+
